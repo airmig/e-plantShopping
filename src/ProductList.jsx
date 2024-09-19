@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
 import { addItem, removeItem, updateQuantity } from './CartSlice';
+import { useDispatch } from 'react-redux';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
@@ -250,6 +251,7 @@ const handlePlantsClick = (e) => {
   };
 
   const [addedToCart, setAddedToCart] = useState({});
+  const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
     dispatch(addItem(product));
